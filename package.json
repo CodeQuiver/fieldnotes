@@ -1,0 +1,22 @@
+{
+  "name": "fieldnotes",
+  "version": "1.0.0",
+  "description": "Simple canvassing app",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeQuiver/fieldnotes.git"
+  },
+  "author": "CodeQuiver",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodeQuiver/fieldnotes/issues"
+  },
+  "homepage": "https://github.com/CodeQuiver/fieldnotes#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
