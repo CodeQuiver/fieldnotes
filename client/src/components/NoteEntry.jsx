@@ -1,11 +1,14 @@
 
-function NoteEntry(props) {
+function NoteEntry({activePersonName, activeNoteText}) {
     return (
       <div className="NoteEntry">
+        <h2>
+            Start a new entry:
+        </h2>
         <form>
             <label>Name</label>
             <input>
-                {props.name}
+                {activePersonName}
             </input>
             {/* NOTE- considered splitting Name into Given Name/ Family Name, but in the field it's difficult to be precise,
              this app seems made to collect raw data for processing later so simple Name seems better.
@@ -13,7 +16,7 @@ function NoteEntry(props) {
 
             <label>Notes</label>
             <textarea>
-                {props.notes}
+                {activeNoteText}
             </textarea>
 
             {/* TODO- expand to allow client to dynamically add custom field, or choose from previous custom fields added */}
