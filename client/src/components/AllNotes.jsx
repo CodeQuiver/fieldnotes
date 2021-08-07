@@ -10,7 +10,8 @@ function AllNotes() {
         </header>
         <nav>
             <li>
-                <a href="#">All Notes</a> TODO-Add React Router to link components
+                <a href="#">All Notes</a> 
+                {/* TODO-Add React Router to link components */}
             </li>
         </nav>
       </div>
