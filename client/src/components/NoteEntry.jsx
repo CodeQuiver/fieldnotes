@@ -1,3 +1,6 @@
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+
 
 function NoteEntry({activePersonName, activeNoteText, handleChange, handleSubmit}) {
     return (
@@ -5,7 +8,7 @@ function NoteEntry({activePersonName, activeNoteText, handleChange, handleSubmit
         <h2>
             Start a new entry:
         </h2>
-        <form onSubmit={handleSubmit}>
+        <Form onSubmit={handleSubmit}>
             <label>Name</label>
             <input name="activePersonName" value={activePersonName} onChange={handleChange}></input>
             {/* NOTE- considered splitting Name into Given Name/ Family Name, but in the field it's difficult to be precise,
@@ -17,10 +20,10 @@ function NoteEntry({activePersonName, activeNoteText, handleChange, handleSubmit
             </textarea>
 
             {/* TODO- expand to allow client to dynamically add custom field, or choose from previous custom fields added */}
-            <button>
+            <Button onSubmit={handleSubmit}>
             Submit
-            </button>
-        </form>
+            </Button>
+        </Form>
       </div>
     );
   }

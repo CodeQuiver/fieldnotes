@@ -1,6 +1,7 @@
 import React from 'react';
 import AllNotes from './AllNotes';
 import NoteEntry from './NoteEntry';
+import API from '../utils/API';
 
 class Home extends React.Component {
     constructor(props) {
@@ -13,28 +14,10 @@ class Home extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
       }
 
-      handleChange(event) {
-        this.setState({[event.target.name]: event.target.value });
-      }
-
-      handleSubmit(event) {
-        event.preventDefault();
-        if (this.state.activeNoteText.length === 0 && this.state.activePersonName.length === 0) {
-          return;
-        }
-        
-        const newRecord = {
-          personName: this.state.activePersonName,
-          noteText: this.state.activeNoteText,
-          timeStamp: Date.now()
-        };
-
-        this.setState(state => ({
-            records: state.records.concat(newRecord),
-            activePersonName: '',
-            activeNoteText: '',
-        }));
-      }
+    // TODO- maybe replace with hooks, that's what I'd use in a larger project
+    componentDidMount() {
+		this.getAllRecords();
+	}
     
     render() {
         return (
@@ -64,6 +47,51 @@ class Home extends React.Component {
             </div>
         );
     }
+
+    //************ API helpers **************
+	getAllRecords = () => {
+		API.getRecords()
+			.then((res) => {
+				this.setState({ records: res.data });
+			})
+			.catch((err) => console.log(err));
+	};
+
+    //create Record Function
+	createRecord = (newRecord) => {
+		API.createRecord(newRecord)
+			.then((res) => {
+				alert(`${res.data.personName} has been added`);
+				this.getAllRecords();
+			})
+			.catch((err) => console.log(err));
+	};
+
+    //************ Handlers **************
+      handleChange(event) {
+        this.setState({[event.target.name]: event.target.value });
+      }
+
+      handleSubmit(event) {
+        event.preventDefault();
+        if (this.state.activeNoteText.length === 0 && this.state.activePersonName.length === 0) {
+          return;
+        }
+        
+        const newRecord = {
+          personName: this.state.activePersonName,
+          noteText: this.state.activeNoteText,
+          timeStamp: Date.now()
+        };
+
+        this.setState(state => ({
+            records: state.records.concat(newRecord),
+            activePersonName: '',
+            activeNoteText: '',
+        }));
+
+        this.createRecord(newRecord);
+      }
  
 }
 
