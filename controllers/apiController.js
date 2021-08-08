@@ -2,8 +2,6 @@
 //require your models and export your functions
 
 const db = require('../models');
-const mongoose = require("mongoose");
-
 
 module.exports = {
 	findAllRecords: (req, res) => {
@@ -24,5 +22,14 @@ module.exports = {
 		.catch(err => res.json(err))
 	},
 
-    // TODO- add update ability here
+    // TODO- complete adding update ability here in future
+    // updateNoteText: (req,res) => {
+	// 	let id = mongoose.Types.ObjectId(req.body.recordID);	
+	// 	db.Records.findOneAndUpdate(
+	// 		{_id: id}, {$set: {
+    //             noteText: req.body.noteText,
+    //         }})
+	// 		.then((record) => {res.json(record)})
+	// 		.catch((err) => {res.json(err)})
+	// },
 };

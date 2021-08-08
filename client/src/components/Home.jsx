@@ -2,6 +2,7 @@ import React from 'react';
 import AllNotes from './AllNotes';
 import NoteEntry from './NoteEntry';
 import API from '../utils/API';
+import buildRecord from '../helpers';
 
 class Home extends React.Component {
     constructor(props) {
@@ -9,6 +10,7 @@ class Home extends React.Component {
         this.state = {
             activePersonName: '',
             activeNoteText: '',
+            userName: 'user', //Generic username for now, including this in order to attach the writer's name to each record (needs login or anonymous login to function of course)
             records: [],  };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -78,11 +80,7 @@ class Home extends React.Component {
           return;
         }
         
-        const newRecord = {
-          personName: this.state.activePersonName,
-          noteText: this.state.activeNoteText,
-          timeStamp: Date.now()
-        };
+        const newRecord = buildRecord(this.state.activePersonName, this.state.activeNoteText, Date.now(), this.state.userName)
 
         this.setState(state => ({
             records: state.records.concat(newRecord),
