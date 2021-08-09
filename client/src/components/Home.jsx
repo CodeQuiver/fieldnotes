@@ -1,5 +1,4 @@
 import React from 'react';
-import AllNotes from './AllNotes';
 import NoteEntry from './NoteEntry';
 import API from '../utils/API';
 import buildRecord from '../helpers';
@@ -26,7 +25,7 @@ class Home extends React.Component {
             <div className="Home container-fluid">
                 <div className="row">
                     <header className="col">
-                        Notepad
+                        Notepad- take notes here:
                     </header>
                 </div>
                                 

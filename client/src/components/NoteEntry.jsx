@@ -6,9 +6,6 @@ import Form from 'react-bootstrap/Form';
 function NoteEntry({activePersonName, activeNoteText, handleChange, handleSubmit}) {
     return (
       <div className="NoteEntry">
-        <h4>
-            Take Notes Here:
-        </h4>
         <Form onSubmit={handleSubmit}>
           <FormGroup>
           <Form.Label for="activePersonName">Name</Form.Label>

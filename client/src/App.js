@@ -5,8 +5,8 @@ import {
     Route,
     Link
   } from 'react-router-dom';
-import Home from './Home';
-import AllNotes from './AllNotes';
+import Home from './components/Home';
+import AllNotes from './components/AllNotes';
 
 function App() {
   return (
