@@ -26,24 +26,10 @@ class Home extends React.Component {
             <div className="Home container-fluid">
                 <div className="row">
                     <header className="col">
-                        <h1>Field Notes</h1>
+                        Notepad
                     </header>
                 </div>
-                
-                <div className="row">
-                    <div className="col"></div>
-                    <div className="col-1">
-                        <nav>
-                            {/* TODO-make sidebar with home and all notes options as applicable */}
-                            <li>
-                                <a href="#">All Notes</a>
-                                {/* TODO-Add React Router to link components or toggle them with state values */}
-                            </li>
-                        </nav>
-                    </div>
-                    
-                </div>
-                
+                                
                 <div className="row">
                     <div className="col">
                         <NoteEntry
@@ -54,12 +40,6 @@ class Home extends React.Component {
                         />
                     </div>
                 </div>
-                
-
-                {/* TODO- move this to its own linked page, here only for testing- alternatively toggle visibility within single page */}
-                <AllNotes
-                    records = {this.state.records}
-                />
             </div>
         );
     }
