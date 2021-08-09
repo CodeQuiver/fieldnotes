@@ -9,8 +9,7 @@
     "start": "node server.js",
     "client": "npm run start --prefix client",
     "dev": "concurrently \"npm run start\" \"npm run client\"",
-    "installDeps": "npm install && cd client && npm install",
-    "seed": "node scripts/seedDb.js"
+    "installDeps": "npm install && cd client && npm install"
   },
   "repository": {
     "type": "git",
