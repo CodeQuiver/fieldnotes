@@ -24,7 +24,7 @@ class Home extends React.Component {
         this.handleReset = this.handleReset.bind(this);
       }
 
-    // TODO- maybe replace with hooks, that's what I'd use in a larger project
+    // Note- in a larger project I might use hooks here rather than the below syntax
     componentDidMount() {
 		this.getAllRecords();
 	}
@@ -52,7 +52,6 @@ class Home extends React.Component {
                              />
                         </Route>
                     </Switch>
-                    {/* <footer><small>&copy; Copyright Emily Haines <a href="https://github.com/codequiver">Github: CodeQuiver</a></small></footer> TODO- comment back in once it can be properly styled at bottom of page */}
                 </Router>
                 
             </div>

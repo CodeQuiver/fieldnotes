@@ -26,13 +26,13 @@ function NoteEntry({activePersonName, activeNoteText, handleChange, handleSubmit
             </textarea>
           </FormGroup>
 
-            {/* TODO- expand to allow client to dynamically add custom field, or choose from previous custom fields added */}
-            <Button type="submit" className="btn m-1">
-            Save & Start New Entry
-            </Button>
-            <Button type="reset" className="btn btn-secondary m-1" onClick={handleReset}>
-            Clear
-            </Button>
+          {/* Note- this is where I might expand to allow client to dynamically add custom fields. They would either type a new field name or choose from previous custom fields in a dropdown. */}
+          <Button type="submit" className="btn m-1">
+          Save & Start New Entry
+          </Button>
+          <Button type="reset" className="btn btn-secondary m-1" onClick={handleReset}>
+          Clear
+          </Button>
         </Form>
       </div>
     );
