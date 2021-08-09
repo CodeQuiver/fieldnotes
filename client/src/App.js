@@ -12,15 +12,9 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <nav>
-            <ul className="nav">
-            <li className="nav-item">
-                <Link to="/">Notepad</Link>
-            </li>
-            <li className="nav-item">
-                <Link to="/allNotes">Past Notes</Link>
-            </li>
-            </ul>
+        <nav className="navbar justify-content-end m-0 p-0">
+          <Link className="nav-item m-0 p-2" to="/">Notepad</Link>
+          <Link className="nav-item m-0 p-2" to="/allNotes">Past Notes</Link>
         </nav>
 
         <Switch>

@@ -24,9 +24,9 @@ class Home extends React.Component {
         return (
             <div className="Home container-fluid">
                 <div className="row">
-                    <header className="col">
+                    <h4 className="col">
                         Notepad- take notes here:
-                    </header>
+                    </h4>
                 </div>
                                 
                 <div className="row">
