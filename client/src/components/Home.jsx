@@ -9,6 +9,7 @@ import {
     Link
   } from 'react-router-dom';
 import AllNotes from './AllNotes';
+import { Alert } from 'bootstrap';
 
 class Home extends React.Component {
     constructor(props) {
@@ -51,8 +52,9 @@ class Home extends React.Component {
                              />
                         </Route>
                     </Switch>
+                    {/* <footer><small>&copy; Copyright Emily Haines <a href="https://github.com/codequiver">Github: CodeQuiver</a></small></footer> TODO- comment back in once it can be properly styled at bottom of page */}
                 </Router>
-                <footer><small>&copy Copyright Emily Haines <a href="https://github.com/codequiver">Github: CodeQuiver</a></small></footer>
+                
             </div>
         );
     }
@@ -88,7 +90,7 @@ class Home extends React.Component {
 
       handleSubmit(event) {
         event.preventDefault();
-        if (this.state.activeNoteText.length === 0 && this.state.activePersonName.length === 0) {
+        if (this.state.activeNoteText.length === 0 || this.state.activePersonName.length === 0) {
           return;
         }
         

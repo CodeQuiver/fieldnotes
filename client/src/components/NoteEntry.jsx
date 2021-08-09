@@ -14,7 +14,7 @@ function NoteEntry({activePersonName, activeNoteText, handleChange, handleSubmit
         <Form onSubmit={handleSubmit}>
           <FormGroup>
           <Form.FloatingLabel htmlFor="activePersonName">Contact Name</Form.FloatingLabel>
-            <input name="activePersonName" value={activePersonName} onChange={handleChange}></input>
+            <input name="activePersonName" value={activePersonName} onChange={handleChange} required="true"></input>
             {/* NOTE- considered splitting Name into Given Name/ Family Name, but in the field it's difficult to be precise,
              this app seems made to collect raw data for processing later so simple Name seems better.
              In real life I would discuss this with the client/ design team */}
@@ -22,7 +22,7 @@ function NoteEntry({activePersonName, activeNoteText, handleChange, handleSubmit
             
           <FormGroup>
           <Form.FloatingLabel htmlFor="activeNoteText">Notes</Form.FloatingLabel>
-            <textarea name="activeNoteText" value={activeNoteText} onChange={handleChange}>
+            <textarea name="activeNoteText" value={activeNoteText} onChange={handleChange} required="true">
             </textarea>
           </FormGroup>
 

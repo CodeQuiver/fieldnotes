@@ -1,4 +1,10 @@
 const buildRecord = (personName, noteText, timeStamp, userName) => {
+    if (personName && noteText) {
+        
+    } else {
+        
+    }
+
     let record = {
         personName,
         noteText,
