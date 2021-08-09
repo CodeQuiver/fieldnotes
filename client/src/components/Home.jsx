@@ -52,6 +52,7 @@ class Home extends React.Component {
                         </Route>
                     </Switch>
                 </Router>
+                <footer><small>&copy Copyright Emily Haines <a href="https://github.com/codequiver">Github: CodeQuiver</a></small></footer>
             </div>
         );
     }
@@ -68,7 +69,6 @@ class Home extends React.Component {
 	createRecord = (newRecord) => {
 		API.createRecord(newRecord)
 			.then((res) => {
-				alert(`${res.data.personName} has been added`);
 				this.getAllRecords();
 			})
 			.catch((err) => console.log(err));
