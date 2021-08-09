@@ -2,7 +2,7 @@ import express from 'express';
 const app = express();
 import mongoose from 'mongoose';
 const connect = mongoose.connect;
-import router from './routes/index.js';
+import routes from './routes/index.js';
 
 const PORT = process.env.PORT || 3001;
 
@@ -14,7 +14,7 @@ app.use(express.json()); // replaces deprecated bodyparser middleware
 // }
 
 // Define API routes
-app.use(router);
+app.use(routes);
 
 // set the MONGODB_URI as an env property to allow remote deployment configuration
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/fieldNotesDb';

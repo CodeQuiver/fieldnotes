@@ -6,8 +6,7 @@ import db from '../models/fieldNotesDb.js'
 
  const controller = {
 	findAllRecords: (req, res) => {
-		db.Records
-			.find({})
+		db.find({})
 			.then((records) => {
 				res.json(records);
 			})
@@ -17,8 +16,7 @@ import db from '../models/fieldNotesDb.js'
 	},
 
 	createRecord: (req,res) => {
-		db.Records
-		.create(req.body)
+		db.create(req.body)
 		.then(record => res.json(record))
 		.catch(err => res.json(err))
 	},

@@ -1,4 +1,3 @@
-import { Timestamp } from 'mongodb';
 import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 const model = mongoose.model;
@@ -10,7 +9,7 @@ const recordSchema = new Schema({
 	},
 	noteText: {
 		type: String,
-		required: false
+		required: true
 	},
 	timeStamp: {
 		type: Date,

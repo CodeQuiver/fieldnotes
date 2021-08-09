@@ -2,15 +2,11 @@ import axios from 'axios';
 
 const API = {
 	getRecords: () => {
-		return axios.get('/api/record');
+		return axios.get('/api/');
     },
     createRecord: data => {
-        return axios.post('/api/record/', data)
-    },
-    deleteRecord: data => {
-        return axios.post('/api/record/delete', data)
-    }
-	
+        return axios.post('/api/', data)
+    },	
 };
 
 export default API;

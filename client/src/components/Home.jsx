@@ -2,6 +2,13 @@ import React from 'react';
 import NoteEntry from './NoteEntry';
 import API from '../utils/API';
 import buildRecord from '../helpers';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from 'react-router-dom';
+import AllNotes from './AllNotes';
 
 class Home extends React.Component {
     constructor(props) {
@@ -23,22 +30,26 @@ class Home extends React.Component {
     render() {
         return (
             <div className="Home container-fluid">
-                <div className="row">
-                    <h4 className="col">
-                        Notepad- take notes here:
-                    </h4>
-                </div>
-                                
-                <div className="row">
-                    <div className="col">
-                        <NoteEntry
-                        activePersonName = {this.state.activePersonName}
-                        activeNoteText = {this.state.activeNoteText}
-                        handleChange = {this.handleChange}
-                        handleSubmit = {this.handleSubmit}
-                        />
-                    </div>
-                </div>
+                <Router>
+                    <nav className="navbar justify-content-end m-0 p-0">
+                        <Link className="nav-item m-0 p-2" to="/">Notepad</Link>
+                        <Link className="nav-item m-0 p-2" to="/allNotes">Past Notes</Link>
+                    </nav>
+
+                    <Switch>
+                        <Route path="/allNotes">
+                            <AllNotes records={this.state.records} />
+                        </Route>
+                        <Route path="/">
+                            <NoteEntry
+                                activePersonName = {this.state.activePersonName}
+                                activeNoteText = {this.state.activeNoteText}
+                                handleChange = {this.handleChange}
+                                handleSubmit = {this.handleSubmit}
+                             />
+                        </Route>
+                    </Switch>
+                </Router>
             </div>
         );
     }
@@ -52,7 +63,6 @@ class Home extends React.Component {
 			.catch((err) => console.log(err));
 	};
 
-    //create Record Function
 	createRecord = (newRecord) => {
 		API.createRecord(newRecord)
 			.then((res) => {
