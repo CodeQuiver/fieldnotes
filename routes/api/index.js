@@ -1,7 +1,7 @@
-const router = require('express').Router();
-import controller from '../../controllers/apiController';
+import express from 'express';
+const router = express.Router();
+import controller from '../../controllers/apiController.js';
 
-module.exports = router;
 
 // /api/
 router.route('/').get(controller.findAllRecords);
@@ -11,3 +11,5 @@ router.route('/').post(controller.createRecord);
 
 // /api/update/:data  route to update a record- TODO for future feature
 // router.route('/update').put(controller.updateRecord);
+
+export default router;

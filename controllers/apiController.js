@@ -1,9 +1,10 @@
 //All routes lead to the controllers file
 //require your models and export your functions
 
-const db = require('../models');
+// const db = require('../models');
+import db from '../models/fieldNotesDb.js'
 
-module.exports = {
+ const controller = {
 	findAllRecords: (req, res) => {
 		db.Records
 			.find({})
@@ -33,3 +34,5 @@ module.exports = {
 	// 		.catch((err) => {res.json(err)})
 	// },
 };
+
+export default controller;

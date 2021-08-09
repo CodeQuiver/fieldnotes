@@ -23,24 +23,38 @@ class Home extends React.Component {
     
     render() {
         return (
-            <div className="Home">
-                <header>
-                    <h1>Field Notes</h1>
-                </header>
-                <nav style={{float: "right"}}>
-                    {/* TODO-make sidebar with home and all notes options as applicable */}
-                    <li>
-                        <a href="#">All Notes</a>
-                        {/* TODO-Add React Router to link components or toggle them with state values */}
-                    </li>
-                </nav>
+            <div className="Home container-fluid">
+                <div className="row">
+                    <header className="col">
+                        <h1>Field Notes</h1>
+                    </header>
+                </div>
                 
-                <NoteEntry
-                    activePersonName = {this.state.activePersonName}
-                    activeNoteText = {this.state.activeNoteText}
-                    handleChange = {this.handleChange}
-                    handleSubmit = {this.handleSubmit}
-                />
+                <div className="row">
+                    <div className="col"></div>
+                    <div className="col-1">
+                        <nav>
+                            {/* TODO-make sidebar with home and all notes options as applicable */}
+                            <li>
+                                <a href="#">All Notes</a>
+                                {/* TODO-Add React Router to link components or toggle them with state values */}
+                            </li>
+                        </nav>
+                    </div>
+                    
+                </div>
+                
+                <div className="row">
+                    <div className="col">
+                        <NoteEntry
+                        activePersonName = {this.state.activePersonName}
+                        activeNoteText = {this.state.activeNoteText}
+                        handleChange = {this.handleChange}
+                        handleSubmit = {this.handleSubmit}
+                        />
+                    </div>
+                </div>
+                
 
                 {/* TODO- move this to its own linked page, here only for testing- alternatively toggle visibility within single page */}
                 <AllNotes

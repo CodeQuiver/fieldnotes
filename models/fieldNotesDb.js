@@ -1,6 +1,7 @@
 import { Timestamp } from 'mongodb';
-import { Schema as _Schema, model } from 'mongoose';
-const Schema = _Schema;
+import mongoose from 'mongoose';
+const Schema = mongoose.Schema;
+const model = mongoose.model;
 
 const recordSchema = new Schema({
 	personName: {
@@ -12,7 +13,7 @@ const recordSchema = new Schema({
 		required: false
 	},
 	timeStamp: {
-		type: Timestamp,
+		type: Date,
 		required: false
 	},
 	userName: {

@@ -2,9 +2,10 @@
 // setting all routes to start with /api and then whats in api will follow hence the const apiRoutes
 // basically all routes in the api folder will start with /api
 
-const router = require('express').Router();
+import express from 'express';
+const router = express.Router();
 import { join } from 'path';
-import apiRoutes from './api';
+import apiRoutes from './api/index.js';
 router.use('/api', apiRoutes);
 
 // If no API routes are hit, send the React app
