@@ -3,9 +3,7 @@ function AllNotes({records}) {
 
     return (
       <div className="AllNotes">
-        <header id="top">
-            <h3>All Notes</h3>
-        </header>
+        <h3 id="top">All Notes</h3>
         
         <ul>
             {records.map(record => (

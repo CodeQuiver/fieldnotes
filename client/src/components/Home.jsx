@@ -20,6 +20,7 @@ class Home extends React.Component {
             records: [],  };
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleReset = this.handleReset.bind(this);
       }
 
     // TODO- maybe replace with hooks, that's what I'd use in a larger project
@@ -46,6 +47,7 @@ class Home extends React.Component {
                                 activeNoteText = {this.state.activeNoteText}
                                 handleChange = {this.handleChange}
                                 handleSubmit = {this.handleSubmit}
+                                handleReset = {this.handleReset}
                              />
                         </Route>
                     </Switch>
@@ -77,6 +79,13 @@ class Home extends React.Component {
         this.setState({[event.target.name]: event.target.value });
       }
 
+      handleReset() {
+        this.setState({
+            activePersonName: '',
+            activeNoteText: '',
+        });
+      }
+
       handleSubmit(event) {
         event.preventDefault();
         if (this.state.activeNoteText.length === 0 && this.state.activePersonName.length === 0) {
@@ -87,9 +96,9 @@ class Home extends React.Component {
 
         this.setState(state => ({
             records: state.records.concat(newRecord),
-            activePersonName: '',
-            activeNoteText: '',
         }));
+
+        this.handleReset();
 
         this.createRecord(newRecord);
       }
