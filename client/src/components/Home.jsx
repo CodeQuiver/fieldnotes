@@ -9,7 +9,6 @@ import {
     Link
   } from 'react-router-dom';
 import AllNotes from './AllNotes';
-import { Alert } from 'bootstrap';
 
 class Home extends React.Component {
     constructor(props) {

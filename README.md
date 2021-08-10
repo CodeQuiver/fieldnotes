@@ -4,7 +4,7 @@ Simple application to organize and store canvassing notes. Uses the MERN stack.
 ## Deployment
 To run this, you will need to have a local copy of MongoDB and npm installed.
 
-From the root `fieldnotes` directory, run `npm run installDeps` to automatically install all the required npm packages.
+From the root `fieldnotes` directory, run `npm run fullSetup` to automatically install all the required npm packages and build an optimized, production-ready version of the React app.
 
 Next, ensure you have MongoDB running in the background (if it's installed, the command `mongod` should start it up- do this in a separate terminal).
 
