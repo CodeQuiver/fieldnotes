@@ -5,7 +5,8 @@ function AllNotes({records}) {
       <div className="AllNotes">
         <h3 id="top">All Notes</h3>
         <ul className="list-group">
-            {records.map(record => (
+            {/* reversing so most recent should be at the top */}
+            {records.slice(0).reverse().map(record => (
                 <li key={record.timeStamp} className="list-group-item">
                     <div>
                     <div className="fw-bold">{record.personName}</div>
