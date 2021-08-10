@@ -1,10 +1,14 @@
 # fieldnotes
-Simple application to organize and store canvassing notes.
+Simple application to organize and store canvassing notes. Uses the MERN stack.
 
 ## Deployment
-To deploy and run this yourself, you will need to have a local copy of MongoDB running in the background (if it's installed, the command `mongod` should start it up- do this in its own terminal).
+To run this, you will need to have a local copy of MongoDB and npm installed.
 
-Next, run `npm run start`
+From the root `fieldnotes` directory, run `npm run installDeps` to automatically install all the required npm packages.
+
+Next, ensure you have MongoDB running in the background (if it's installed, the command `mongod` should start it up- do this in a separate terminal).
+
+Next, run `npm run start` to start the server.
 
 The final line in the terminal should show the port the server is running on and the database path in use.
 
