@@ -1,5 +1,5 @@
 # fieldnotes
-Simple application to organize and store canvassing notes. Uses the MERN stack.
+Simple application to record and store canvassing notes. Uses the MERN stack.
 
 ## Deployment
 To run this, you will need to have a local copy of MongoDB and npm installed.
